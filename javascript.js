@@ -28,8 +28,6 @@ $(document).ready(function () {
 
         var hour = dayjs().hour();
 
-        console.log(hour);
-
 
         $('textarea').each(
             function () {
@@ -60,7 +58,6 @@ $(document).ready(function () {
         };
 
         var textArea = $(this).siblings('textarea');
-        console.log(textArea);
 
         schedule.time = textArea.prop("id");
         schedule.event = textArea.val().trim();
@@ -68,7 +65,6 @@ $(document).ready(function () {
 
         storedSchedule.push(schedule);
 
-        console.log(schedule);
 
         lsSchedule = JSON.stringify(storedSchedule);
 
@@ -82,8 +78,6 @@ $(document).ready(function () {
     function renderSched() {
 
         var jsonSched = JSON.parse(localStorage.getItem("lsSchedule"));
-        console.log(lsSchedule);
-        console.log(storedSchedule);
 
         if (jsonSched === null) {
             return
@@ -93,8 +87,6 @@ $(document).ready(function () {
 
             for (i = 0; i < storedSchedule.length; i++) {
                 for (j = 0; j < $("textarea").length; j++) {
-                    console.log($("textarea")[j].id);
-                    console.log(storedSchedule);
 
                     if (storedSchedule[i].time === $("textarea")[j].id) {
                         $("textarea")[j].value = storedSchedule[i].event;
