@@ -5,6 +5,9 @@ $(document).ready(function () {
 
     var lsSchedule = [];
 
+
+
+
     //date shows current date and time
     $("#currentDay").text(now);
 
@@ -16,31 +19,35 @@ $(document).ready(function () {
 
     function updateTime() {
         now = setInterval(function () {
-            now = dayjs().format("ddd, MMM D, YYYY h:mm");
+           now = dayjs().format("ddd, MMM D, YYYY h:mm");
+        
             $("#currentDay").text(now);
             colorBlocks();
         }, 60000);
     };
 
 
+
+
     //event blocks change color depending on current time
     function colorBlocks() {
 
-        var hour = dayjs().hour();
-
-
         $('textarea').each(
             function () {
-                var currentID = $(this).attr("id");
+
+                var hour = dayjs().hour();
+
+
+                var currentID = parseInt($(this).attr("id"));
 
                 if (currentID < hour) {
-                    $(this).addClass("past");
+                    $(this).attr("class", "past col-10");
                 }
                 else if (currentID > hour) {
-                    $(this).addClass("future");
+                    $(this).attr("class", "future col-10");
                 }
                 else {
-                    $(this).addClass("present");
+                    $(this).attr("class", "present col-10");
                 }
             }
         );
