@@ -1,6 +1,6 @@
 # day-planner
 
-A simple, javascipt day planner with hours 9 am - 5pm to schedule your work day utilizing day.js. Referencine day.js allows the app to access the current date and time. As the day progresses, the time blocks change from green for future events to red for the current hour to grey for past events. 
+A simple, javascipt day planner with hours 9 am - 5pm to schedule your work day utilizing day.js. Referencing day.js allows the app to access the current date and time. As the day progresses, the time blocks change from green for future events to red for the current hour to grey for past events. 
 
 ![color blocks](images/colorBlocks.png)
 
